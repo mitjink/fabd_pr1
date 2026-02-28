@@ -1,0 +1,25 @@
+.product-card {
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  background-color: #f0bee4;
+  padding: 20px;
+  transition: transform 0.2s ease;
+  max-width: 250px;
+  text-align: center;
+  border: 2px solid transparent;
+}
+.product-card__image {
+  width: 100%;
+  border-radius: 12px;
+  margin-bottom: 15px;
+}
+.product-card__title {
+  font-size: 1.5em;
+  color: #2b2a29;
+  margin: 10px 0;
+}
+.product-card__description {
+  font-size: 0.9em;
+  color: #666;
+  line-height: 1.5;
+}/*# sourceMappingURL=style.css.map */
