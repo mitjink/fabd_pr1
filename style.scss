@@ -1,6 +1,37 @@
 $primary-color: #2b2a29;
 $border-radius: 12px;
 $box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
+$bg_color: rgb(212, 142, 195);
+$btn_color: rgba(160, 224, 128, 0.62);
+$card_color: rgba(255, 255, 255, 0.62);
+
+$card_title: #213724;
+$card_desc: #24410e;
+$btn_text: #e9f1f8;
+
+$radius-lg: 18px;
+$radius-md: 12px;
+
+html, body {
+  margin: 0;
+  height: 100%;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+@mixin button($bg) {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  padding: 12px 16px;
+  background: $bg;
+  color: $btn_text;
+  border: 0;
+  border-radius: $radius-md;
+  cursor: pointer;
+  font-weight: 600;
+  transition: transform 140ms ease, filter 140ms ease;
+}
 
 @mixin card-style {
     border-radius: $border-radius;
@@ -10,27 +41,56 @@ $box-shadow-light: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s ease;
 }
 
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: $bg_color;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
 .product-card {
     @include card-style;
-    max-width: 250px;
+    max-width: 300px; 
     text-align: center;
     border: 2px solid transparent;
 
     &__image {
         width: 100%;
+        height: auto;
         border-radius: $border-radius;
-        margin-bottom: 15px;
+        display: block; 
+    }
+
+    &__content {
+        margin-top: 20px;
+        padding: 15px;
+        background-color: $card_color;
+        border-radius: $border-radius;
     }
 
     &__title {
         font-size: 1.5em;
-        color: $primary-color;
-        margin: 10px 0;
+        color: $card_title;
+        margin: 0 0 10px 0;
+        text-align: center;
     }
 
     &__description {
         font-size: 0.9em;
-        color: #666;
+        color: $card_desc; 
         line-height: 1.5;
+        margin: 0;
+        text-align: center;
     }
+}
+
+.product-card__button {
+    @include button($btn_color);
+    margin-top: 15px;
+    color: $primary-color;
+    text-align: center;
 }
